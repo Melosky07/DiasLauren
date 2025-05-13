@@ -1,0 +1,98 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bg_heart {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
+/* Corazón base */
+.heart {
+  position: absolute;
+  top: -50%;
+  transform: rotate(-45deg);
+}
+
+/* Semicírculo izquierdo */
+.heart:before {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 100%;
+}
+
+/* Semicírculo derecho */
+.heart:after {
+  position: absolute;
+  top: 0;
+  right: -50%;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 100%;
+}
+
+/* Animación */
+@keyframes love {
+  0% {
+    top: 110%;
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+
+/* Compatibilidad opcional */
+@-webkit-keyframes love {
+  0% {
+    top: 110%;
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+@-moz-keyframes love {
+  0% {
+    top: 110%;
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+@-ms-keyframes love {
+  0% {
+    top: 110%;
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+
+/* ✅ Responsive: Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+  .heart {
+    transform: scale(0.6) rotate(-45deg); /* corazones más pequeños */
+  }
+}
